@@ -1,0 +1,1313 @@
+{
+ "_note": "SELF-AUTHORED demonstration fixtures for the notebook (not collected kindergarten records). Children are fictional. Allergen information per ingredient is a reviewed fixture written for the demo; 'unknown' marks a purchased product whose label was not reviewed. Ingredient quantities are cooked/raw as stated by the BLS entry and give 10 child portions (age 4 to under 7). DGE flags were assigned by hand for the check of selected criteria.",
+ "ingredients": {
+  "vollkornnudeln": {
+   "name_de": "Vollkornnudeln (gekocht)",
+   "bls_code": "E500032",
+   "state": "cooked",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "Hartweizenvollkorngrieß."
+  },
+  "reisnudeln": {
+   "name_de": "Reisnudeln (gekocht)",
+   "bls_code": "C559032",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "kartoffeln": {
+   "name_de": "Kartoffeln, geschält, gekocht",
+   "bls_code": "K110132",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "naturreis": {
+   "name_de": "Naturreis (gekocht)",
+   "bls_code": "C351032",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "bulgur": {
+   "name_de": "Bulgur (gekocht)",
+   "bls_code": "C119132",
+   "state": "cooked",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "dinkel": {
+   "name_de": "Dinkel, ganzes Korn (gekocht)",
+   "bls_code": "C236032",
+   "state": "cooked",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "spaetzle": {
+   "name_de": "Eier-Spätzle, selbstgemacht (roh)",
+   "bls_code": "X711512",
+   "state": "raw",
+   "allergens_declared": [
+    "gluten",
+    "egg"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "kartoffelpuffer": {
+   "name_de": "Kartoffelpuffer, gebraten",
+   "bls_code": "X655022",
+   "state": "cooked",
+   "allergens_declared": [
+    "egg",
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "rote_linsen": {
+   "name_de": "Rote Linsen (gekocht)",
+   "bls_code": "H730032",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "Rote Linsen, geschält."
+  },
+  "kichererbsen": {
+   "name_de": "Kichererbsen (gekocht)",
+   "bls_code": "G770432",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "erbsen": {
+   "name_de": "Erbsen, TK (gekocht)",
+   "bls_code": "G760232",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "moehre_roh": {
+   "name_de": "Möhre, roh",
+   "bls_code": "G620100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "moehre_gedünstet": {
+   "name_de": "Möhre, gedünstet",
+   "bls_code": "G620152",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "gurke": {
+   "name_de": "Gurke, roh",
+   "bls_code": "G520100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "tomate": {
+   "name_de": "Tomate, roh",
+   "bls_code": "G561100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "paprika": {
+   "name_de": "Paprika rot, roh",
+   "bls_code": "G543100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "kopfsalat": {
+   "name_de": "Kopfsalat, roh",
+   "bls_code": "G105100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "weisskohl": {
+   "name_de": "Weißkohl, roh",
+   "bls_code": "G342100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "brokkoli": {
+   "name_de": "Brokkoli, gedünstet",
+   "bls_code": "G312152",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "blumenkohl": {
+   "name_de": "Blumenkohl, gedünstet",
+   "bls_code": "G311152",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "spinat": {
+   "name_de": "Spinat, gedünstet",
+   "bls_code": "G211152",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "zucchini": {
+   "name_de": "Zucchini, gedünstet",
+   "bls_code": "G582152",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "kuerbis": {
+   "name_de": "Hokkaido-Kürbis, geschmort",
+   "bls_code": "G581042",
+   "state": "cooked",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "mais": {
+   "name_de": "Mais, Konserve, abgetropft",
+   "bls_code": "G570902",
+   "state": "as purchased",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "zwiebel": {
+   "name_de": "Zwiebel, roh",
+   "bls_code": "G480100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "tomaten_passiert": {
+   "name_de": "Tomaten, passiert",
+   "bls_code": "R161200",
+   "state": "as purchased",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "gemuesebruehe": {
+   "name_de": "Gemüsebrühe (Instant, zubereitet)",
+   "bls_code": "X416243",
+   "state": "prepared",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "unknown"
+  },
+  "apfel": {
+   "name_de": "Apfel, roh (Stückobst)",
+   "bls_code": "F110100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "Äpfel."
+  },
+  "banane": {
+   "name_de": "Banane, roh (Stückobst)",
+   "bls_code": "F503100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "apfelmus": {
+   "name_de": "Apfelmus, ungesüßt",
+   "bls_code": "Y864112",
+   "state": "prepared",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "milch15": {
+   "name_de": "Milch 1,5 % Fett",
+   "bls_code": "M111200",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk",
+    "lactose"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "milch_laktosefrei": {
+   "name_de": "Milch 1,5 % Fett, laktosefrei",
+   "bls_code": "M114200",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "haferdrink": {
+   "name_de": "Haferdrink ungesüßt, mit Calcium angereichert",
+   "bls_code": "C660200",
+   "state": "as purchased",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "joghurt35": {
+   "name_de": "Naturjoghurt 3,5 % Fett",
+   "bls_code": "M141300",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk",
+    "lactose"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "Joghurt mild aus pasteurisierter Milch, 3,5 % Fett, Joghurtkulturen."
+  },
+  "quark20": {
+   "name_de": "Speisequark 20 % Fett i. Tr.",
+   "bls_code": "M713300",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk",
+    "lactose"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "gouda30": {
+   "name_de": "Gouda 30 % Fett i. Tr.",
+   "bls_code": "M402400",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "Kuhmilch, Speisesalz, Milchsäurekulturen, mikrobielles Lab, Farbstoff: Beta-Carotin."
+  },
+  "butter": {
+   "name_de": "Butter",
+   "bls_code": "Q611000",
+   "state": "as purchased",
+   "allergens_declared": [
+    "milk"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "seelachs": {
+   "name_de": "Seelachsfilet, gedünstet",
+   "bls_code": "T207152",
+   "state": "cooked",
+   "allergens_declared": [
+    "fish"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "lachs": {
+   "name_de": "Lachsfilet, gedünstet (fettreicher Fisch)",
+   "bls_code": "T410052",
+   "state": "cooked",
+   "allergens_declared": [
+    "fish"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "fischstaebchen": {
+   "name_de": "Fischstäbchen, paniert, Ofen",
+   "bls_code": "T930162",
+   "state": "cooked",
+   "allergens_declared": [
+    "fish",
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed",
+   "label_text": "65 % Alaska-Seelachsfilet, Weizenmehl, Rapsöl, Wasser, Kartoffelstärke, Speisesalz, Hefe, Gewürze."
+  },
+  "haehnchenbrust": {
+   "name_de": "Hähnchenbrust ohne Haut (roh, mageres Muskelfleisch)",
+   "bls_code": "V4A6100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "putenbrust": {
+   "name_de": "Putenbrust ohne Haut (roh, mageres Muskelfleisch)",
+   "bls_code": "V486100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "rinderhack": {
+   "name_de": "Rinderhackfleisch (roh)",
+   "bls_code": "U010100",
+   "state": "raw",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "ei": {
+   "name_de": "Hühnerei (roh)",
+   "bls_code": "E111100",
+   "state": "raw",
+   "allergens_declared": [
+    "egg"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "tofu": {
+   "name_de": "Tofu natur",
+   "bls_code": "H861000",
+   "state": "as purchased",
+   "allergens_declared": [
+    "soy"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "veggie_bratwurst": {
+   "name_de": "Vegetarische Bratwurst (Tofu/Weizenprotein, industriell)",
+   "bls_code": "H910300",
+   "state": "as purchased",
+   "allergens_declared": [
+    "soy",
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "rapsoel": {
+   "name_de": "Rapsöl",
+   "bls_code": "Q180000",
+   "state": "as purchased",
+   "allergens_declared": [],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "haferflocken": {
+   "name_de": "Haferflocken",
+   "bls_code": "C133000",
+   "state": "as purchased",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "vollkornbrot": {
+   "name_de": "Roggenvollkornbrot",
+   "bls_code": "B121000",
+   "state": "as purchased",
+   "allergens_declared": [
+    "gluten"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  },
+  "hummus": {
+   "name_de": "Hummus",
+   "bls_code": "H960000",
+   "state": "as purchased",
+   "allergens_declared": [
+    "sesame"
+   ],
+   "allergens_traces": [],
+   "allergen_info": "reviewed"
+  }
+ },
+ "recipes": {
+  "linsenbolognese": {
+   "name": "Vollkornnudeln mit Linsen-Bolognese",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat",
+    "huelsenfruechte"
+   ],
+   "ingredients": [
+    {
+     "id": "vollkornnudeln",
+     "grams": 1500
+    },
+    {
+     "id": "rote_linsen",
+     "grams": 800
+    },
+    {
+     "id": "tomaten_passiert",
+     "grams": 700
+    },
+    {
+     "id": "moehre_gedünstet",
+     "grams": 400
+    },
+    {
+     "id": "zwiebel",
+     "grams": 150
+    },
+    {
+     "id": "rapsoel",
+     "grams": 40
+    }
+   ]
+  },
+  "seelachs_kartoffeln": {
+   "name": "Seelachs mit Kartoffeln und Brokkoli",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "gemuese_salat",
+    "fisch"
+   ],
+   "ingredients": [
+    {
+     "id": "seelachs",
+     "grams": 500
+    },
+    {
+     "id": "kartoffeln",
+     "grams": 1400
+    },
+    {
+     "id": "brokkoli",
+     "grams": 1000
+    },
+    {
+     "id": "butter",
+     "grams": 40
+    },
+    {
+     "id": "gemuesebruehe",
+     "grams": 200
+    }
+   ]
+  },
+  "haehnchen_reis": {
+   "name": "Hähnchen-Gemüse-Pfanne mit Naturreis",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat",
+    "fleisch",
+    "mageres_muskelfleisch"
+   ],
+   "ingredients": [
+    {
+     "id": "haehnchenbrust",
+     "grams": 450
+    },
+    {
+     "id": "naturreis",
+     "grams": 1400
+    },
+    {
+     "id": "paprika",
+     "grams": 500
+    },
+    {
+     "id": "zucchini",
+     "grams": 500
+    },
+    {
+     "id": "mais",
+     "grams": 300
+    },
+    {
+     "id": "rapsoel",
+     "grams": 50
+    }
+   ]
+  },
+  "kaesespaetzle": {
+   "name": "Käsespätzle mit Apfelmus",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "milchprodukt",
+    "obst"
+   ],
+   "ingredients": [
+    {
+     "id": "spaetzle",
+     "grams": 1600
+    },
+    {
+     "id": "gouda30",
+     "grams": 300
+    },
+    {
+     "id": "zwiebel",
+     "grams": 150
+    },
+    {
+     "id": "butter",
+     "grams": 40
+    },
+    {
+     "id": "apfelmus",
+     "grams": 800
+    }
+   ]
+  },
+  "kuerbissuppe": {
+   "name": "Kürbissuppe mit Vollkornbrot",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat"
+   ],
+   "ingredients": [
+    {
+     "id": "kuerbis",
+     "grams": 1500
+    },
+    {
+     "id": "kartoffeln",
+     "grams": 500
+    },
+    {
+     "id": "zwiebel",
+     "grams": 100
+    },
+    {
+     "id": "gemuesebruehe",
+     "grams": 1200
+    },
+    {
+     "id": "rapsoel",
+     "grams": 30
+    },
+    {
+     "id": "vollkornbrot",
+     "grams": 500
+    }
+   ]
+  },
+  "tofu_bulgur": {
+   "name": "Tofu-Gemüse-Pfanne mit Bulgur",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat"
+   ],
+   "ingredients": [
+    {
+     "id": "tofu",
+     "grams": 500
+    },
+    {
+     "id": "bulgur",
+     "grams": 1300
+    },
+    {
+     "id": "brokkoli",
+     "grams": 600
+    },
+    {
+     "id": "paprika",
+     "grams": 400
+    },
+    {
+     "id": "rapsoel",
+     "grams": 50
+    }
+   ]
+  },
+  "fischstaebchen_puree": {
+   "name": "Fischstäbchen mit Kartoffelpüree und Erbsen",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "gemuese_salat",
+    "huelsenfruechte",
+    "fisch",
+    "frittiert_paniert",
+    "milchprodukt"
+   ],
+   "ingredients": [
+    {
+     "id": "fischstaebchen",
+     "grams": 600
+    },
+    {
+     "id": "kartoffeln",
+     "grams": 1400
+    },
+    {
+     "id": "milch15",
+     "grams": 300
+    },
+    {
+     "id": "erbsen",
+     "grams": 800
+    },
+    {
+     "id": "butter",
+     "grams": 30
+    }
+   ]
+  },
+  "kichererbsen_curry": {
+   "name": "Kichererbsen-Curry mit Naturreis",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat",
+    "huelsenfruechte"
+   ],
+   "ingredients": [
+    {
+     "id": "kichererbsen",
+     "grams": 800
+    },
+    {
+     "id": "naturreis",
+     "grams": 1400
+    },
+    {
+     "id": "blumenkohl",
+     "grams": 700
+    },
+    {
+     "id": "tomaten_passiert",
+     "grams": 500
+    },
+    {
+     "id": "rapsoel",
+     "grams": 40
+    }
+   ]
+  },
+  "hackbaellchen": {
+   "name": "Rinderhackbällchen mit Dinkel und Möhrengemüse",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat",
+    "fleisch"
+   ],
+   "ingredients": [
+    {
+     "id": "rinderhack",
+     "grams": 400
+    },
+    {
+     "id": "ei",
+     "grams": 60
+    },
+    {
+     "id": "dinkel",
+     "grams": 1300
+    },
+    {
+     "id": "moehre_gedünstet",
+     "grams": 900
+    },
+    {
+     "id": "zwiebel",
+     "grams": 100
+    },
+    {
+     "id": "rapsoel",
+     "grams": 40
+    }
+   ]
+  },
+  "lachs_spinat": {
+   "name": "Lachs mit Spinat und Kartoffeln",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "gemuese_salat",
+    "fisch",
+    "fettreicher_fisch"
+   ],
+   "ingredients": [
+    {
+     "id": "lachs",
+     "grams": 450
+    },
+    {
+     "id": "spinat",
+     "grams": 900
+    },
+    {
+     "id": "kartoffeln",
+     "grams": 1400
+    },
+    {
+     "id": "rapsoel",
+     "grams": 30
+    }
+   ]
+  },
+  "kartoffelpuffer_apfelmus": {
+   "name": "Kartoffelpuffer mit Apfelmus und Quark",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "kartoffelerzeugnis",
+    "frittiert_paniert",
+    "obst",
+    "milchprodukt"
+   ],
+   "ingredients": [
+    {
+     "id": "kartoffelpuffer",
+     "grams": 1300
+    },
+    {
+     "id": "apfelmus",
+     "grams": 800
+    },
+    {
+     "id": "quark20",
+     "grams": 400
+    }
+   ]
+  },
+  "veggie_wurst": {
+   "name": "Vegetarische Bratwurst mit Kartoffeln und Mais",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "gemuese_salat",
+    "fleischalternative_industriell"
+   ],
+   "ingredients": [
+    {
+     "id": "veggie_bratwurst",
+     "grams": 500
+    },
+    {
+     "id": "kartoffeln",
+     "grams": 1400
+    },
+    {
+     "id": "mais",
+     "grams": 400
+    },
+    {
+     "id": "gurke",
+     "grams": 400
+    }
+   ]
+  },
+  "puten_reisnudeln": {
+   "name": "Putenstreifen mit Reisnudeln und Gemüse",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "gemuese_salat",
+    "fleisch",
+    "mageres_muskelfleisch"
+   ],
+   "ingredients": [
+    {
+     "id": "putenbrust",
+     "grams": 450
+    },
+    {
+     "id": "reisnudeln",
+     "grams": 1400
+    },
+    {
+     "id": "brokkoli",
+     "grams": 600
+    },
+    {
+     "id": "moehre_gedünstet",
+     "grams": 400
+    },
+    {
+     "id": "rapsoel",
+     "grams": 50
+    }
+   ]
+  },
+  "rohkost": {
+   "name": "Rohkostteller (Möhre, Gurke, Paprika)",
+   "servings": 10,
+   "dge_flags": [
+    "gemuese_salat",
+    "rohkost"
+   ],
+   "ingredients": [
+    {
+     "id": "moehre_roh",
+     "grams": 400
+    },
+    {
+     "id": "gurke",
+     "grams": 400
+    },
+    {
+     "id": "paprika",
+     "grams": 300
+    }
+   ]
+  },
+  "salat": {
+   "name": "Blattsalat mit Tomate",
+   "servings": 10,
+   "dge_flags": [
+    "gemuese_salat",
+    "rohkost"
+   ],
+   "ingredients": [
+    {
+     "id": "kopfsalat",
+     "grams": 300
+    },
+    {
+     "id": "tomate",
+     "grams": 500
+    },
+    {
+     "id": "rapsoel",
+     "grams": 30
+    }
+   ]
+  },
+  "krautsalat": {
+   "name": "Weißkohl-Möhren-Salat",
+   "servings": 10,
+   "dge_flags": [
+    "gemuese_salat",
+    "rohkost"
+   ],
+   "ingredients": [
+    {
+     "id": "weisskohl",
+     "grams": 500
+    },
+    {
+     "id": "moehre_roh",
+     "grams": 300
+    },
+    {
+     "id": "rapsoel",
+     "grams": 30
+    }
+   ]
+  },
+  "obst": {
+   "name": "Apfel (Stückobst)",
+   "servings": 10,
+   "dge_flags": [
+    "obst",
+    "stueckobst"
+   ],
+   "ingredients": [
+    {
+     "id": "apfel",
+     "grams": 1000
+    }
+   ]
+  },
+  "banane": {
+   "name": "Banane (Stückobst)",
+   "servings": 10,
+   "dge_flags": [
+    "obst",
+    "stueckobst"
+   ],
+   "ingredients": [
+    {
+     "id": "banane",
+     "grams": 1000
+    }
+   ]
+  },
+  "joghurt": {
+   "name": "Naturjoghurt mit Haferflocken",
+   "servings": 10,
+   "dge_flags": [
+    "milchprodukt",
+    "getreide_kartoffeln",
+    "vollkorn"
+   ],
+   "ingredients": [
+    {
+     "id": "joghurt35",
+     "grams": 1200
+    },
+    {
+     "id": "haferflocken",
+     "grams": 150
+    }
+   ]
+  },
+  "quark_obst": {
+   "name": "Quark mit Apfelmus",
+   "servings": 10,
+   "dge_flags": [
+    "milchprodukt",
+    "obst"
+   ],
+   "ingredients": [
+    {
+     "id": "quark20",
+     "grams": 800
+    },
+    {
+     "id": "apfelmus",
+     "grams": 600
+    }
+   ]
+  },
+  "hummus_brot": {
+   "name": "Vollkornbrot mit Hummus und Rohkost",
+   "servings": 10,
+   "dge_flags": [
+    "getreide_kartoffeln",
+    "vollkorn",
+    "gemuese_salat",
+    "rohkost",
+    "huelsenfruechte"
+   ],
+   "ingredients": [
+    {
+     "id": "vollkornbrot",
+     "grams": 800
+    },
+    {
+     "id": "hummus",
+     "grams": 400
+    },
+    {
+     "id": "gurke",
+     "grams": 400
+    },
+    {
+     "id": "moehre_roh",
+     "grams": 300
+    }
+   ]
+  }
+ },
+ "week1": [
+  {
+   "day": "Mo",
+   "recipes": [
+    "linsenbolognese",
+    "salat",
+    "obst"
+   ]
+  },
+  {
+   "day": "Di",
+   "recipes": [
+    "seelachs_kartoffeln",
+    "joghurt"
+   ]
+  },
+  {
+   "day": "Mi",
+   "recipes": [
+    "haehnchen_reis",
+    "rohkost"
+   ]
+  },
+  {
+   "day": "Do",
+   "recipes": [
+    "kaesespaetzle",
+    "krautsalat"
+   ]
+  },
+  {
+   "day": "Fr",
+   "recipes": [
+    "kuerbissuppe",
+    "quark_obst"
+   ]
+  }
+ ],
+ "cycle4w": [
+  {
+   "day": "W1-Mo",
+   "recipes": [
+    "linsenbolognese",
+    "salat",
+    "obst"
+   ]
+  },
+  {
+   "day": "W1-Di",
+   "recipes": [
+    "seelachs_kartoffeln",
+    "joghurt"
+   ]
+  },
+  {
+   "day": "W1-Mi",
+   "recipes": [
+    "haehnchen_reis",
+    "rohkost"
+   ]
+  },
+  {
+   "day": "W1-Do",
+   "recipes": [
+    "kaesespaetzle",
+    "krautsalat"
+   ]
+  },
+  {
+   "day": "W1-Fr",
+   "recipes": [
+    "kuerbissuppe",
+    "quark_obst"
+   ]
+  },
+  {
+   "day": "W2-Mo",
+   "recipes": [
+    "tofu_bulgur",
+    "rohkost",
+    "banane"
+   ]
+  },
+  {
+   "day": "W2-Di",
+   "recipes": [
+    "fischstaebchen_puree",
+    "salat"
+   ]
+  },
+  {
+   "day": "W2-Mi",
+   "recipes": [
+    "kichererbsen_curry",
+    "joghurt"
+   ]
+  },
+  {
+   "day": "W2-Do",
+   "recipes": [
+    "hackbaellchen",
+    "krautsalat",
+    "obst"
+   ]
+  },
+  {
+   "day": "W2-Fr",
+   "recipes": [
+    "hummus_brot",
+    "quark_obst"
+   ]
+  },
+  {
+   "day": "W3-Mo",
+   "recipes": [
+    "kichererbsen_curry",
+    "rohkost",
+    "obst"
+   ]
+  },
+  {
+   "day": "W3-Di",
+   "recipes": [
+    "puten_reisnudeln",
+    "salat"
+   ]
+  },
+  {
+   "day": "W3-Mi",
+   "recipes": [
+    "kaesespaetzle",
+    "joghurt"
+   ]
+  },
+  {
+   "day": "W3-Do",
+   "recipes": [
+    "kartoffelpuffer_apfelmus",
+    "krautsalat"
+   ]
+  },
+  {
+   "day": "W3-Fr",
+   "recipes": [
+    "linsenbolognese",
+    "rohkost",
+    "banane"
+   ]
+  },
+  {
+   "day": "W4-Mo",
+   "recipes": [
+    "veggie_wurst",
+    "krautsalat",
+    "obst"
+   ]
+  },
+  {
+   "day": "W4-Di",
+   "recipes": [
+    "lachs_spinat",
+    "rohkost"
+   ]
+  },
+  {
+   "day": "W4-Mi",
+   "recipes": [
+    "hummus_brot",
+    "joghurt"
+   ]
+  },
+  {
+   "day": "W4-Do",
+   "recipes": [
+    "haehnchen_reis",
+    "salat",
+    "banane"
+   ]
+  },
+  {
+   "day": "W4-Fr",
+   "recipes": [
+    "tofu_bulgur",
+    "quark_obst"
+   ]
+  }
+ ],
+ "children": [
+  {
+   "name": "Kind A (fictional)",
+   "restrictions": [
+    {
+     "type": "allergy",
+     "allergen": "milk",
+     "note": "cow's milk protein allergy - lactose-free milk is NOT suitable"
+    }
+   ]
+  },
+  {
+   "name": "Kind B (fictional)",
+   "restrictions": [
+    {
+     "type": "intolerance",
+     "allergen": "lactose",
+     "note": "lactose intolerance - lactose-free dairy may be suitable after review"
+    }
+   ]
+  },
+  {
+   "name": "Kind C (fictional)",
+   "restrictions": [
+    {
+     "type": "allergy",
+     "allergen": "gluten",
+     "note": "coeliac disease - strict gluten avoidance"
+    }
+   ]
+  },
+  {
+   "name": "Kind D (fictional)",
+   "restrictions": [
+    {
+     "type": "allergy",
+     "allergen": "egg",
+     "note": "hen's egg allergy"
+    },
+    {
+     "type": "allergy",
+     "allergen": "soy",
+     "note": "soy allergy"
+    }
+   ]
+  }
+ ],
+ "substitutions": [
+  {
+   "for": "milch15",
+   "candidate": "haferdrink",
+   "reason": "milk allergy: Ca-fortified oat drink; less protein; contains oats (gluten); not a full milk substitute - dietetic review"
+  },
+  {
+   "for": "milch15",
+   "candidate": "milch_laktosefrei",
+   "reason": "lactose intolerance only: same nutrition, still milk protein - blocked for milk allergy"
+  },
+  {
+   "for": "gouda30",
+   "candidate": "tofu",
+   "reason": "milk allergy: plant protein, less calcium; contains soy - blocked for soy allergy; texture differs"
+  },
+  {
+   "for": "vollkornnudeln",
+   "candidate": "reisnudeln",
+   "reason": "coeliac: gluten-free; loses whole-grain credit and fibre - re-plan Vollkorn elsewhere in the week"
+  },
+  {
+   "for": "spaetzle",
+   "candidate": "reisnudeln",
+   "reason": "egg or gluten allergy: egg- and gluten-free; less protein per 100 g"
+  },
+  {
+   "for": "fischstaebchen",
+   "candidate": "seelachs",
+   "reason": "gluten (breading) and DGE: unbreaded fish drops the frittiert/paniert count; fish allergy remains"
+  },
+  {
+   "for": "rinderhack",
+   "candidate": "rote_linsen",
+   "reason": "vegetarian / less saturated fat; adds legumes; plant iron - pair with vitamin-C-rich vegetables"
+  },
+  {
+   "for": "ei",
+   "candidate": "haferflocken",
+   "reason": "egg allergy: binder; contains oats (gluten) - blocked for coeliac child"
+  }
+ ]
+}

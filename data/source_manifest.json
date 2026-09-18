@@ -1,0 +1,107 @@
+{
+  "generated": "2026-09-17",
+  "sources": [
+    {
+      "name": "Open Food Facts (Kaggle dataset openfoodfacts/world-food-facts)",
+      "publisher": "Open Food Facts, published on Kaggle",
+      "url": "https://www.kaggle.com/datasets/openfoodfacts/world-food-facts",
+      "retrieved": "2026-09-16 (kagglehub, anonymous)",
+      "version": "Kaggle dataset version 5 (2017 snapshot)",
+      "license": "Open Database License (ODbL) v1.0",
+      "original_filename": "en.openfoodfacts.org.products.tsv",
+      "bytes": 1010256825,
+      "sha256": "d1f351a7e2df9f0606126ed82feed45c39b836de5744d792090f1d3dbe7987bf",
+      "rows": 356027,
+      "columns_in_file": 163
+    },
+    {
+      "name": "OFF food-groups / PNNS documentation",
+      "publisher": "Open Food Facts (openfoodfacts-server, main)",
+      "url": "https://raw.githubusercontent.com/openfoodfacts/openfoodfacts-server/main/taxonomies/food_groups.txt",
+      "retrieved": "2026-09-16",
+      "license": "ODbL / AGPL-3.0 (repository)",
+      "path": "refs/food_groups.txt",
+      "bytes": 9498,
+      "sha256": "e23004a53a804ddc71a6e627ceebc6ed674a2fa933cc5bb5e90ae65142af3c0f"
+    },
+    {
+      "name": "Bundeslebensmittelschlüssel (BLS) 4.0",
+      "publisher": "Max Rubner-Institut, Karlsruhe",
+      "url": "https://blsdb.de/download",
+      "retrieved": "2026-09-16",
+      "version": "4.0 (Dezember 2025)",
+      "license": "CC BY 4.0 - cite: Max Rubner-Institut (2025): Bundeslebensmittelschlüssel (BLS), Version 4.0 - Deutsche Nährstoffdatenbank. Karlsruhe. DOI: 10.25826/Data20251217-134202-0",
+      "original_filename": "BLS_4_0_2025_DE.zip",
+      "path": "data/raw/BLS_4_0_2025_DE.zip",
+      "bytes": 14263306,
+      "sha256": "12b7a6ba62807ec9b301eb276f897dc85f99b2292311618dec3749a12d984c91"
+    },
+    {
+      "name": "DGE-Qualitätsstandard für die Verpflegung in Kitas, 6. Aufl., 2. korr. Nachdruck 2023",
+      "publisher": "Deutsche Gesellschaft für Ernährung e. V.",
+      "url": "https://www.dge.de/fileadmin/dok/gemeinschaftsgastronomie/dge-qualitaetsstandards/2023/230929-DGE-QST-Kita.pdf",
+      "retrieved": "2026-09-16",
+      "license": "copyright DGE - used as reference, not redistributed",
+      "path": "refs/DGE-QST-Kita-2023.pdf",
+      "bytes": 6448230,
+      "sha256": "8137df53304f0410c91857378fd8801b9f27b581d17c800e15c3e59206b9dd7b"
+    },
+    {
+      "name": "Regulation (EU) No 1169/2011, Annex II",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2011/1169/oj",
+      "retrieved": "2026-09-16",
+      "license": "EU public documents"
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "data/raw/off_kaggle_extract.parquet",
+      "bytes": 41552916,
+      "sha256": "96d60854b3f449fbdfb486c4ba79534b31271b3ebe95a2547f7bf95b06b4dae5",
+      "rows": 356027,
+      "recipe": "scripts/01_download_kaggle_off.py (22 columns, values unchanged)",
+      "license": "ODbL v1.0"
+    },
+    {
+      "path": "data/processed/off_foodgroups_sample.csv",
+      "bytes": 4956858,
+      "sha256": "40f3ad1555722510a9ab3b2fe3f60f07d90a2999000d0727b09a4a7eb2d7dcef",
+      "rows": 12001,
+      "recipe": "scripts/02_build_subset.py (filters F1-F6, seed 42; energy kJ -> kcal)",
+      "license": "ODbL v1.0 - attribution: Open Food Facts contributors"
+    },
+    {
+      "path": "data/processed/bls40_subset.csv",
+      "bytes": 942536,
+      "sha256": "eaa898f32ad99e8ea1f6f41152c8e30dc7f901a55e6290f75c14896ca26fa62d",
+      "rows": 7140,
+      "recipe": "scripts/03_build_bls_subset.py",
+      "license": "CC BY 4.0 - Max Rubner-Institut"
+    },
+    {
+      "path": "data/processed/demo_fixtures.json",
+      "bytes": 24812,
+      "sha256": "aef54e79c240c68a780827bc29ae4de93ea1947a4c8962424507cfda9dbdef9c",
+      "recipe": "self-authored demonstration fixtures (fictional)",
+      "license": "project"
+    }
+  ],
+  "alternatives_inspected": [
+    {
+      "name": "Hugging Face openfoodfacts/product-database (2026 Parquet, revision 8aea7223)",
+      "rows": 4740368,
+      "note": "used in the first project version (350,618 German-language products); replaced by the Kaggle snapshot at the student's request so that the dataset comes from Kaggle"
+    },
+    {
+      "name": "Kaggle irkaal/foodcom-recipes-and-reviews",
+      "rows": 522517,
+      "note": "English recipes, 311 free-text categories, nutrition per recipe without per-100 g basis"
+    },
+    {
+      "name": "Kaggle trolukovich/nutritional-values-for-common-foods-and-products",
+      "rows": 8789,
+      "note": "nutrients only, no ingredient text and no supervised label"
+    }
+  ]
+}

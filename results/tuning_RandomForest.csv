@@ -1,0 +1,17 @@
+mean_fit_time,std_fit_time,mean_score_time,std_score_time,param_model__max_depth,param_model__max_features,param_model__min_samples_leaf,param_model__n_estimators,params,mean_test_score,std_test_score
+1.24,0.052,0.158,0.001,20,sqrt,1,100,"{'model__max_depth': 20, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 1, 'model__n_estimators': 100}",0.85,0.005
+3.019,0.098,0.232,0.009,20,sqrt,1,300,"{'model__max_depth': 20, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 1, 'model__n_estimators': 300}",0.859,0.003
+1.014,0.007,0.154,0.005,20,sqrt,3,100,"{'model__max_depth': 20, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 3, 'model__n_estimators': 100}",0.841,0.001
+2.339,0.069,0.234,0.005,20,sqrt,3,300,"{'model__max_depth': 20, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 3, 'model__n_estimators': 300}",0.845,0.006
+3.197,0.047,0.169,0.002,20,0.05,1,100,"{'model__max_depth': 20, 'model__max_features': 0.05, 'model__min_samples_leaf': 1, 'model__n_estimators': 100}",0.884,0.007
+8.555,0.259,0.247,0.009,20,0.05,1,300,"{'model__max_depth': 20, 'model__max_features': 0.05, 'model__min_samples_leaf': 1, 'model__n_estimators': 300}",0.887,0.005
+2.539,0.061,0.148,0.005,20,0.05,3,100,"{'model__max_depth': 20, 'model__max_features': 0.05, 'model__min_samples_leaf': 3, 'model__n_estimators': 100}",0.878,0.007
+6.73,0.329,0.228,0.016,20,0.05,3,300,"{'model__max_depth': 20, 'model__max_features': 0.05, 'model__min_samples_leaf': 3, 'model__n_estimators': 300}",0.881,0.007
+2.797,0.041,0.175,0.001,,sqrt,1,100,"{'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 1, 'model__n_estimators': 100}",0.88,0.007
+7.624,0.04,0.301,0.016,,sqrt,1,300,"{'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 1, 'model__n_estimators': 300}",0.884,0.009
+1.281,0.037,0.164,0.002,,sqrt,3,100,"{'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 3, 'model__n_estimators': 100}",0.863,0.009
+3.357,0.052,0.246,0.016,,sqrt,3,300,"{'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 3, 'model__n_estimators': 300}",0.865,0.009
+4.286,0.015,0.17,0.002,,0.05,1,100,"{'model__max_depth': None, 'model__max_features': 0.05, 'model__min_samples_leaf': 1, 'model__n_estimators': 100}",0.892,0.008
+12.073,0.046,0.258,0.008,,0.05,1,300,"{'model__max_depth': None, 'model__max_features': 0.05, 'model__min_samples_leaf': 1, 'model__n_estimators': 300}",0.893,0.006
+3.047,0.052,0.16,0.003,,0.05,3,100,"{'model__max_depth': None, 'model__max_features': 0.05, 'model__min_samples_leaf': 3, 'model__n_estimators': 100}",0.882,0.007
+8.576,0.162,0.249,0.001,,0.05,3,300,"{'model__max_depth': None, 'model__max_features': 0.05, 'model__min_samples_leaf': 3, 'model__n_estimators': 300}",0.885,0.005

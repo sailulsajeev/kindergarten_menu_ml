@@ -1,0 +1,11 @@
+{
+  "F0_kaggle_products": 356027,
+  "F1_known_food_group": 85402,
+  "F2_has_ingredients": 71415,
+  "F3_has_core_nutrients": 61872,
+  "F4_kept_classes": 55320,
+  "F5a_duplicate_groups_total": 2859,
+  "F5b_conflicting_label_groups_dropped": 81,
+  "F5c_after_dedup_one_per_group": 47949,
+  "F6_stratified_sample": 12001
+}

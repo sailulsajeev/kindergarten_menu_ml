@@ -1,0 +1,6 @@
+model,strategy,macro_f1,sd,fit_s
+Dummy,A: unscaled,0.046,0.0,0.407
+LogReg,A: unscaled,0.804,0.007,32.535
+LogReg,B: scaled,0.872,0.008,2.27
+RandomForest,A: unscaled,0.888,0.007,3.402
+RandomForest,B: scaled,0.886,0.003,3.448

@@ -1,0 +1,4 @@
+,accuracy,balanced_accuracy,macro_f1
+Dummy,0.225,0.125,0.046
+LogReg,0.905,0.889,0.887
+RandomForest,0.926,0.91,0.912

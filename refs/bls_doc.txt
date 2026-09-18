@@ -1,0 +1,1079 @@
+                                                        BLS 4.0 Dokumentation
+
+
+
+
+Bundeslebensmittelschlüssel
+                    Version 4.0
+                  Dokumentation
+
+      Referenzhandbuch für die Nährstoffdatenbank
+
+
+
+
+                   Max Rubner-Institut
+   Bundesforschungsinstitut für Ernährung und Lebensmittel
+
+
+
+
+                   Stand: Dezember 2025
+
+
+
+
+                        Seite 1 von 24
+                                                                                                             BLS 4.0 Dokumentation
+
+
+
+Inhaltsverzeichnis
+Inhaltsverzeichnis ................................................................................................................. 2
+1. Einleitung .......................................................................................................................... 4
+   1.1 Über diese Dokumentation .......................................................................................... 4
+   1.2 Über den Bundeslebensmittelschlüssel ....................................................................... 4
+   1.3 Enthaltene Dateien ...................................................................................................... 4
+2. Struktur der Hauptdatei ..................................................................................................... 5
+   2.1 Übersicht ..................................................................................................................... 5
+   2.2 Spaltenstruktur ............................................................................................................ 5
+   2.3 Das finale Format ........................................................................................................ 5
+   2.4 BLS Code-Systematik.................................................................................................. 6
+3. Nährstoffe ......................................................................................................................... 7
+   3.1 Übersicht der Nährstoffgruppen ................................................................................... 7
+   3.2 Energie ........................................................................................................................ 7
+   3.3 Makronährstoffe........................................................................................................... 7
+   3.4 Kohlenhydrate ............................................................................................................. 8
+   3.5 Ballaststoffe ................................................................................................................. 8
+   3.6 Fettsäuren ................................................................................................................... 9
+      Gesättigte Fettsäuren .................................................................................................... 9
+      Einfach ungesättigte Fettsäuren..................................................................................... 9
+      Mehrfach ungesättigte Fettsäuren ................................................................................ 10
+      Sonstige Fettsäuren ..................................................................................................... 10
+   3.7 Aminosäuren ............................................................................................................. 11
+      Unentbehrliche Aminosäuren ....................................................................................... 11
+      Nicht-unentbehrliche Aminosäuren .............................................................................. 11
+   3.8 Vitamine .................................................................................................................... 12
+      Fettlösliche Vitamine .................................................................................................... 12
+      Wasserlösliche Vitamine .............................................................................................. 12
+   3.9 Mineralstoffe und Spurenelemente ............................................................................ 13
+   3.10 Organische Säuren und Zuckeralkohole .................................................................. 13
+      Organische Säuren ...................................................................................................... 13
+      Zuckeralkohole ............................................................................................................ 14
+   3.11 Sonstige Nährstoffe ................................................................................................. 14
+4. Datenherkunft und Transparenz ...................................................................................... 15
+   4.1 Grundprinzip der Datentransparenz ........................................................................... 15
+   4.2 Kategorien der Datenherkunft .................................................................................... 15
+      4.2.1 Analyse ............................................................................................................... 15
+      4.2.2 Rezeptberechnung .............................................................................................. 15
+      4.2.3 Musterberechnung .............................................................................................. 15
+
+
+                                                            Seite 2 von 24
+                                                                                                            BLS 4.0 Dokumentation
+
+
+
+      4.2.4 Literatur............................................................................................................... 15
+      4.2.5 Aggregation......................................................................................................... 16
+      4.2.6 Labelangabe ....................................................................................................... 16
+      4.2.7 Nährstoffdatenbank ............................................................................................. 16
+      4.2.8 Übernommener Wert ........................................................................................... 16
+      4.2.9 Reskalierung ....................................................................................................... 16
+      4.2.10 Logische Null .................................................................................................... 16
+      4.2.11 Logische Annahme ........................................................................................... 16
+      4.2.12 Spuren .............................................................................................................. 17
+      4.2.13 Formelberechnung ............................................................................................ 17
+   4.3. Fehlender Wert ......................................................................................................... 17
+   4.4 Interpretation von Datenwerten.................................................................................. 17
+      Wichtige Hinweise zur Dateninterpretation ................................................................... 17
+5. Berechnungsformeln ....................................................................................................... 18
+   5.1 Übersicht ................................................................................................................... 18
+   5.2 Energieberechnung ................................................................................................... 18
+   5.3 Kohlenhydrate ........................................................................................................... 18
+   5.4 Ballaststoffe ............................................................................................................... 18
+   5.5 Fettsäuren ................................................................................................................. 19
+   5.6 Aminosäuren ............................................................................................................. 19
+   5.7 Vitamine .................................................................................................................... 19
+   5.8 Weitere Berechnungen .............................................................................................. 20
+6. Referenzdatei: Komponenten und Formeln ..................................................................... 21
+   6.1 Aufbau der Referenzdatei .......................................................................................... 21
+   6.2 Formelgruppen .......................................................................................................... 21
+7. Technische Spezifikationen............................................................................................. 22
+   7.1 Dateiformat ................................................................................................................ 22
+   7.2 Bezugsgröße ............................................................................................................. 22
+8. Glossar ........................................................................................................................... 23
+9. Kontakt und Weiterführende Informationen ..................................................................... 24
+   9.1 Herausgeber.............................................................................................................. 24
+   9.2 Zitierweise ................................................................................................................. 24
+   9.3 Nutzungsbedingungen ............................................................................................... 24
+
+
+
+
+                                                           Seite 3 von 24
+                                                                          BLS 4.0 Dokumentation
+
+
+
+1. Einleitung
+1.1 Über diese Dokumentation
+Die Dokumentation dient als Handbuch für die Nutzung der Nährstoffdatenbank BLS 4.0. Sie
+wendet sich primär an Personen aus der Wissenschaft, Softwareentwicklung sowie an
+Fachkräfte in der Ernährungsberatung, die mit den bereitgestellten Datendateien arbeiten.
+Inhaltlich stehen der Aufbau der Datendatei, die Systematik der Nährstoffe sowie deren
+Berechnungsformeln im Fokus; zudem bietet der Text eine detaillierte Erklärung der
+Datenherkunftskennzeichnung – einem zentralen Qualitätsmerkmal des BLS 4.0.
+Hinweis: Die Texterstellung für diese Dokumentation erfolgte KI-assistiert (Schwerpunkt:
+redaktionelle Aufbereitung und Strukturierung). Alle generierten Inhalte wurden vollumfänglich
+durch wissenschaftliches Personal auf fachliche Korrektheit, Vollständigkeit und Konformität
+mit den zugrundeliegenden Daten geprüft.
+
+1.2 Über den Bundeslebensmittelschlüssel
+Der Bundeslebensmittelschlüssel (BLS) ist die nationale Nährstoffdatenbank Deutschlands.
+Er wird am Max Rubner-Institut (MRI), dem Bundesforschungsinstitut für Ernährung und
+Lebensmittel, entwickelt und gepflegt. Der BLS dient als Standardinstrument für die
+Ernährungsforschung, insbesondere zur Auswertung von Verzehrsstudien, und bildet die
+Datenbasis für Ernährungsberatung sowie die Berechnung der Nährwertkennzeichnung.
+Mit Version 4.0 wurde der BLS grundlegend überarbeitet und modernisiert. Zu den
+wesentlichen Neuerungen gehören:
+   •   Anpassung der Lebensmittelauswahl an aktuelle Verzehrsgewohnheiten und
+       Marktentwicklungen
+   •   erweiterte Nährstoffdatenbasis mit mehreren tausend zusätzlichen Datenpunkten aus
+       unterschiedlichen Quellen
+   •   Neue und überarbeitete Datenverarbeitungsschritte
+   •   Vollständige Transparenz über die Datenherkunft jedes Datenpunktes
+   •   Kostenfreie und lizenzfreie Bereitstellung
+
+1.3 Enthaltene Dateien
+Das Datenpaket enthält folgende Dateien:
+ Dateiname                                       Beschreibung
+ BLS_4_0_Daten_2025_DE.xlsx                      Hauptdatei: Vollständige
+                                                 Nährstoffdatenbank mit allen
+                                                 Lebensmitteln und Nährstoffen
+ BLS_4_0_Components_DE_EN.xlsx                   Referenzdatei: Bilinguale Liste aller
+                                                 Nährstoffkomponenten mit Codes,
+                                                 Bezeichnungen, Einheiten und
+                                                 Berechnungsformeln
+ BLS_4_0_Dokumentation_DE.pdf                    Dieses Dokument
+
+
+
+
+                                        Seite 4 von 24
+                                                                           BLS 4.0 Dokumentation
+
+
+
+2. Struktur der Hauptdatei
+2.1 Übersicht
+Die Hauptdatei BLS_4_0_Daten_2025_DE.xlsx enthält 7.140 Lebensmittel mit jeweils 138
+Nährstoffen. Pro Lebensmittel werden neben den Nährstoffgehalten auch Informationen zur
+Datenherkunft bereitgestellt.
+
+ Kennzahl                                       Wert
+ Anzahl Lebensmittel                            7.140 Einträge
+ Anzahl Nährstoffe                              138 Komponenten
+ Anzahl Spalten gesamt                          418 Spalten
+
+
+
+2.2 Spaltenstruktur
+Die ersten drei Spalten der Datei enthalten die Identifikation der Lebensmittel:
+
+ Spalte                          Bezeichnung                     Beschreibung
+                                                                 Eindeutiger
+ A                               BLS Code                        Identifikationscode des
+                                                                 Lebensmittels
+                                                                 Deutsche Bezeichnung des
+ B                               Lebensmittelbezeichnung
+                                                                 Lebensmittels
+                                                                 Englische Bezeichnung des
+ C                               Food name
+                                                                 Lebensmittels
+
+
+Die weiteren Spalten folgen einem einheitlichen Muster. Für jede Nährstoffkomponente sind
+drei aufeinanderfolgende Spalten vorhanden:
+
+ Spaltentyp                      Beispiel                        Inhalt
+ Nährstoff                       Energie (Kilojoule)             Numerischer Wert des
+                                 (kJ/100g)                       Nährstoffs bezogen auf
+                                                                 100 g essbaren Anteil
+ Datenherkunft                   ENERCJ Datenherkunft            Kategorie der
+                                                                 Datenherkunft (siehe
+                                                                 Kapitel 4)
+ Referenz                        ENERCJ Referenz                 Quellenangabe für den
+                                                                 Datenpunkt
+
+
+
+2.3 Das finale Format
+Die Spaltenbezeichnungen der Nährstoffe folgen einem festen Schema, das
+Nährstoffbezeichnung, Nährstoffcode und Einheit eindeutig trennt:
+CODE Nährstoffbezeichnung, Ergänzung (Erläuterung) [Einheit/100g]
+
+
+
+                                         Seite 5 von 24
+                                                                            BLS 4.0 Dokumentation
+
+
+
+Anwendungsbeispiele:
+   •   ENERCJ Energie (Kilojoule) [kJ/100g]
+   •   PROT625 Protein (Nx6,25) [g/100g]
+   •   STARCH Stärke (Stärke, Glykogen, Dextrine) [g/100g]
+   •   VITK1 Vitamin K1 (Phyllochinon) [µg/100g]
+   •   F18:1CN9 Fettsäure C18:1 n-9 cis (Ölsäure) [g/100g]
+   •   FIBHMWS Ballaststoffe, hochmolekular, wasserlöslich [g/100g]
+   •   NA Natrium [mg/100g]
+
+
+2.4 BLS Code-Systematik
+Der BLS Code ist ein alphanumerischer Schlüssel, der jedes Lebensmittel eindeutig
+identifiziert. Der Code folgt weitestgehend der Struktur [Buchstabe][6 Ziffern], wobei der
+führende Buchstabe die Hauptlebensmittelgruppe kennzeichnet:
+
+ BLS Code                        Lebensmittel                    Kategorie
+ C131000                         Hafer ganzes Korn, roh          Getreide
+
+
+
+
+                                         Seite 6 von 24
+                                                                        BLS 4.0 Dokumentation
+
+
+
+3. Nährstoffe
+3.1 Übersicht der Nährstoffgruppen
+Der BLS 4.0 enthält 138 Nährstoffe, gegliedert in folgende 12 Hauptgruppen:
+ Nährstoffgruppe               Anzahl                        Einheit pro 100 g
+ Energie                       2                             kJ, kcal
+ Makronährstoffe               9                             g
+ Kohlenhydrate, verfügbar      11                            g
+ Ballaststoffe, gesamt         6                             g
+ Fettsäuren                    36                            g
+ Aminosäuren                   19                            g
+ Fettlösliche Vitamine         17                            µg, mg
+ Wasserlösliche Vitamine       12                            µg, mg
+ Elemente                      16                            µg, mg
+ Organische Säuren, gesamt     5                             g
+ Zuckeralkohole, gesamt        3                             g
+ Sonstige Nährstoffe           2                             g, mg
+
+
+3.2 Energie
+ Code                          Bezeichnung                   Einheit pro 100 g
+ ENERCJ                        Energie (immer berechnet)     kJ
+ ENERCC                        Energie (immer berechnet)     kcal
+
+
+3.3 Makronährstoffe
+ Code                          Bezeichnung                   Einheit pro 100 g
+ WATER                         Wasser                        g
+ PROT625                       Protein (Nx6,25) (teilweise
+                                                             g
+                               berechnet)
+ FAT                           Fett                          g
+ CHO                           Kohlenhydrate, verfügbar
+                                                             g
+                               (immer berechnet)
+ FIBT                          Ballaststoffe, gesamt
+                                                             g
+                               (teilweise berechnet)
+ ALC                           Alkohol (Ethanol)             g
+ OA                            Organische Säuren, gesamt
+                                                             g
+                               (teilweise berechnet)
+
+
+                                        Seite 7 von 24
+                                                            BLS 4.0 Dokumentation
+
+
+
+ Code               Bezeichnung                    Einheit pro 100 g
+ ASH                Rohasche                       g
+ POLYL              Zuckeralkohole, gesamt
+                                                   g
+                    (immer berechnet)
+
+
+3.4 Kohlenhydrate
+ Code               Bezeichnung                    Einheit pro 100 g
+ GLUS               Glucose                        g
+ FRUS               Fructose                       g
+ GALS               Galactose                      g
+ MNSAC              Monosaccharide, gesamt
+                                                   g
+                    (immer berechnet)
+ SUCS               Saccharose                     g
+ MALS               Maltose                        g
+ LACS               Lactose                        g
+ DISAC              Disaccharide, gesamt
+                                                   g
+                    (immer berechnet)
+ SUGAR              Zucker, gesamt (immer
+                                                   g
+                    berechnet)
+ OLSAC              Oligosaccharide, verfügbar     g
+ STARCH             Stärke (Stärke, Glykogen,
+                                                   g
+                    Dextrine)
+
+
+3.5 Ballaststoffe
+ Code               Bezeichnung                    Einheit pro 100 g
+ FIBLMW             Ballaststoffe,
+                                                   g
+                    niedermolekular
+ FIBHMW             Ballaststoffe, hochmolekular
+                                                   g
+                    (teilweise berechnet)
+ FIBINS             Ballaststoffe,
+                                                   g
+                    wasserunlöslich
+ FIBSOL             Ballaststoffe, wasserlöslich   g
+ FIBHMWS            Ballaststoffe,
+                    hochmolekular,                 g
+                    wasserlöslich
+ FIBHMWI            Ballaststoffe,
+                    hochmolekular,                 g
+                    wasserunlöslich
+
+
+
+
+                              Seite 8 von 24
+                                                                       BLS 4.0 Dokumentation
+
+
+
+3.6 Fettsäuren
+Der BLS 4.0 enthält ein umfassendes Fettsäurespektrum mit 36 Fettsäuren, unterteilt in
+gesättigte, einfach ungesättigte und mehrfach ungesättigte Fettsäuren sowie
+Summenparameter.
+
+Gesättigte Fettsäuren
+ Code                          Bezeichnung                    Einheit pro 100 g
+                               Fettsäuren, gesättigt,
+ FASAT                                                        g
+                               gesamt (immer berechnet)
+ F4:0                          Buttersäure (C4:0)             g
+ F6:0                          Capronsäure (C6:0)             g
+ F8:0                          Caprylsäure (C8:0)             g
+ F10:0                         Caprinsäure (C10:0)            g
+ F12:0                         Laurinsäure (C12:0)            g
+ F14:0                         Myristinsäure (C14:0)          g
+ F15:0                         Pentadecylsäure (C15:0)        g
+ F16:0                         Palmitinsäure (C16:0)          g
+ F17:0                         Margarinsäure (C17:0)          g
+ F18:0                         Stearinsäure (C18:0)           g
+ F20:0                         Arachinsäure (C20:0)           g
+ F22:0                         Behensäure (C22:0)             g
+ F24:0                         Lignocerinsäure (C24:0)        g
+
+Einfach ungesättigte Fettsäuren
+ Code                          Bezeichnung                    Einheit pro 100 g
+                               Fettsäuren, einfach
+ FAMS                          ungesättigt, gesamt (immer     g
+                               berechnet)
+                               Myristoleinsäure (C14:1 n-5
+ F14:1CN5                                                     g
+                               cis)
+                               Palmitoleinsäure (C16:1 n-7
+ F16:1CN7                                                     g
+                               cis)
+ F18:1CN7                      Vaccensäure (C18:1 n-7 cis)    g
+ F18:1CN9                      Ölsäure (C18:1 n-9 cis)        g
+ F20:1CN9                      Gondosäure (C20:1 n-9 cis)     g
+ F22:1CN9                      Erucasäure (C22:1 n-9 cis)     g
+
+
+
+
+                                       Seite 9 von 24
+                                                                BLS 4.0 Dokumentation
+
+
+
+Mehrfach ungesättigte Fettsäuren
+Code                     Bezeichnung                   Einheit pro 100 g
+                         Fettsäuren, mehrfach
+FAPU                     ungesättigt, gesamt (immer    g
+                         berechnet)
+                         Omega-3-Fettsäuren,
+FAPUN3                                                 g
+                         gesamt (immer berechnet)
+                         Omega-6-Fettsäuren,
+FAPUN6                                                 g
+                         gesamt (immer berechnet)
+                         Linolsäure (C18:2 n-6 cis,
+F18:2CN6                                               g
+                         cis)
+                         Konjugierte Linolsäure
+F18:2C9T11                                             g
+                         (C18:2 n-7 cis 9, trans 11)
+                         Alpha-Linolensäure (C18:3
+F18:3CN3                                               g
+                         n-3 all-cis)
+                         Gamma-Linolensäure
+F18:3CN6                                               g
+                         (C18:3 n-6 all-cis)
+                         Stearidonsäure (C18:4 n-3
+F18:4CN3                                               g
+                         all-cis)
+                         Eicosadiensäure (C20:2 n-6
+F20:2CN6                                               g
+                         all-cis)
+                         Dihomogamma-Linolensäure
+F20:3CN6                                               g
+                         (C20:3 n-6 all-cis)
+                         Arachidonsäure (C20:4 n-6
+F20:4CN6                                               g
+                         all-cis)
+                         Eicosapentaensäure EPA
+F20:5CN3                                               g
+                         (C20:5 n-3 all-cis)
+                         Docosapentaensäure (C22:5
+F22:5CN3                                               g
+                         n-3 all-cis)
+                         Docosahexaensäure DHA
+F22:6CN3                                               g
+                         (C22:6 n-3 all-cis)
+
+Sonstige Fettsäuren
+Code                      Bezeichnung                  Einheit pro 100 g
+FAX                       Fettsäuren, sonstige         g
+
+
+
+
+                                   Seite 10 von 24
+                                                                   BLS 4.0 Dokumentation
+
+
+
+3.7 Aminosäuren
+Das Aminosäureprofil umfasst 18 proteinogene Aminosäuren sowie einen berechneten
+Summenparameter für die neun unentbehrliche Aminosäuren (AAE9).
+
+Unentbehrliche Aminosäuren
+ Code                        Bezeichnung                  Einheit pro 100 g
+                             Aminosäuren,
+ AAE9                        unentbehrlich, gesamt        g
+                             (immer berechnet)
+ ILE                         Isoleucin                    g
+ LEU                         Leucin                       g
+ LYS                         Lysin                        g
+ MET                         Methionin                    g
+ PHE                         Phenylalanin                 g
+ THR                         Threonin                     g
+ TRP                         Tryptophan                   g
+ VAL                         Valin                        g
+ HIS                         Histidin                     g
+
+Nicht-unentbehrliche Aminosäuren
+ Code                        Bezeichnung                  Einheit pro 100 g
+ ALA                         Alanin                       g
+ ARG                         Arginin                      g
+                             Asparaginsäure, inklusive
+ ASP                                                      g
+                             Asparagin
+ CYS                         Cystein                      g
+                             Glutaminsäure, inklusive
+ GLU                                                      g
+                             Glutamin
+ GLY                         Glycin                       g
+ PRO                         Prolin                       g
+ SER                         Serin                        g
+ TYR                         Tyrosin                      g
+
+
+
+
+                                        Seite 11 von 24
+                                                                    BLS 4.0 Dokumentation
+
+
+
+3.8 Vitamine
+
+Fettlösliche Vitamine
+ Code                     Bezeichnung                      Einheit pro 100 g
+                          Vitamin A, Retinol-
+ VITA                     Äquivalent (RE, teilweise        µg
+                          berechnet)
+                          Vitamin A, Retinol-Aktivitäts-
+ VITAA                    Äquivalent (RAE, teilweise       µg
+                          berechnet)
+ RETOL                    Retinol                          µg
+ CARTB                    Beta-Carotin                     µg
+                          Carotinoide, außer Beta-
+ CAROTPAXB                                                 µg
+                          Carotin
+                          Vitamin D (teilweise
+ VITD                                                      µg
+                          berechnet)
+ ERGCAL                   Vitamin D2 (Ergocalciferol)      µg
+ CHOCAL                   Vitamin D3 (Cholecalciferol)     µg
+                          Vitamin E (Alpha-
+ VITE                                                      mg
+                          Tocopherol)
+ TOCPHA                   Alpha-Tocopherol                 mg
+ TOCPHB                   Beta-Tocopherol                  mg
+ TOCPHG                   Gamma-Tocopherol                 mg
+ TOCPHD                   Delta-Tocopherol                 mg
+ TOCTRA                   Alpha-Tocotrienol                mg
+                          Vitamin K (teilweise
+ VITK                                                      µg
+                          berechnet)
+ VITK1                    Vitamin K1 (Phyllochinon)        µg
+ VITK2                    Vitamin K2 (Menachinone)         µg
+
+Wasserlösliche Vitamine
+ Code                     Bezeichnung                      Einheit pro 100 g
+ THIA                     Vitamin B1 (Thiamin)             mg
+ RIBF                     Vitamin B2 (Riboflavin)          mg
+ NIA                      Niacin                           mg
+                          Niacin-Äquivalent (immer
+ NIAEQ                                                     mg
+                          berechnet)
+ PANTAC                   Pantothensäure                   mg
+
+
+
+                                    Seite 12 von 24
+                                                            BLS 4.0 Dokumentation
+
+
+
+Code                   Bezeichnung                 Einheit pro 100 g
+VITB6                  Vitamin B6                  µg
+BIOT                   Biotin                      µg
+                       Folat-Äquivalent (immer
+FOL                                                µg
+                       berechnet)
+FOLFD                  Folat                       µg
+FOLAC                  Folsäure, synthetisch       µg
+VITB12                 Vitamin B12 (Cobalamine)    µg
+VITC                   Vitamin C                   mg
+
+
+3.9 Mineralstoffe und Spurenelemente
+Code                   Bezeichnung                 Einheit pro 100 g
+NACL                   Salz (Natriumchlorid)       g
+                       (immer berechnet)
+NA                     Natrium                     mg
+CLD                    Chlorid                     mg
+K                      Kalium                      mg
+CA                     Calcium                     mg
+MG                     Magnesium                   mg
+P                      Phosphor                    mg
+S                      Schwefel                    mg
+FE                     Eisen                       mg
+ZN                     Zink                        mg
+ID                     Iodid                       µg
+CU                     Kupfer                      µg
+MN                     Mangan                      µg
+FD                     Fluorid                     µg
+CR                     Chrom                       µg
+MO                     Molybdän                    µg
+
+
+3.10 Organische Säuren und Zuckeralkohole
+
+Organische Säuren
+Code                   Bezeichnung                 Einheit pro 100 g
+ACEAC                  Essigsäure                  g
+
+
+
+                                 Seite 13 von 24
+                                                               BLS 4.0 Dokumentation
+
+
+
+Code                       Bezeichnung                Einheit pro 100 g
+CITAC                      Zitronensäure              g
+LACAC                      Milchsäure                 g
+MALAC                      Äpfelsäure                 g
+TARAC                      Weinsäure                  g
+
+Zuckeralkohole
+Code                       Bezeichnung                Einheit pro 100 g
+MANTL                      Mannit                     g
+SORTL                      Sorbit                     g
+XYLTL                      Xylit                      g
+
+
+3.11 Sonstige Nährstoffe
+Code                       Bezeichnung                Einheit pro 100 g
+CHORL                      Cholesterin                mg
+NT                         Stickstoff, gesamt         g
+
+
+
+
+                                    Seite 14 von 24
+                                                                         BLS 4.0 Dokumentation
+
+
+
+4. Datenherkunft und Transparenz
+4.1 Grundprinzip der Datentransparenz
+Ein zentrales Qualitätsmerkmal des BLS 4.0 ist die Nachvollziehbarkeit der Nährstoffdaten.
+Für jeden einzelnen Datenpunkt ist dokumentiert, aus welcher Referenz der Wert stammt
+und wie er prozessiert wurde. Diese Transparenz ermöglicht es den Nutzerinnen und
+Nutzern, die jeweilige Qualität der Daten einschätzen zu können, um somit fundierte
+Entscheidungen für ihre Anwendungszwecke zu treffen.
+Die Datenherkunft wird für jeden Nährstoff in einer separaten Spalte angegeben
+(Spaltenname: [Component Code] Datenherkunft). Eine weitere Spalte enthält die Angaben
+zu etwaigen Referenzen.
+
+4.2 Kategorien der Datenherkunft
+Der BLS 4.0 beschreibt 13 unterschiedliche Kategorien, der Datenherkunft, die im
+Folgenden erläutert werden.
+
+4.2.1 Analyse
+Definition: Der Datenpunkt stammt aus einem intern durchgeführten Analyseprojekt.
+Diese Kategorie kennzeichnet Werte, die direkt durch Laboranalysen am Max Rubner-
+Institut oder durch akkreditierte Prüflabore gewonnen wurden. Solche Analysewerte gelten
+als besonders zuverlässig, da sie auf standardisierten Analysemethoden basieren und eine
+direkte Messung des Nährstoffgehalts darstellen.
+
+4.2.2 Rezeptberechnung
+Definition: Der Datenpunkt ist mittels Rezeptberechnung aus den einzelnen Zutaten, unter
+Berücksichtigung von Gewichts- und Nährstoffänderungen, berechnet.
+Bei zusammengesetzten Lebensmitteln wie haushaltstypischen Gerichten und industriellen
+Zubereitungen werden die Nährstoffgehalte auf Basis der Einzelzutaten berechnet. Dabei
+werden verarbeitungsbedingte Gewichts- und Nährstoffveränderungen (z. B. durch Kochen,
+Braten oder Backen) berücksichtigt. Diese Methode ist international anerkannt und etabliert.
+
+4.2.3 Musterberechnung
+Definition: Der Datenpunkt ist durch ein Nährstoffmuster (Aminosäuren, Fettsäuren,
+Ballaststofffraktionen) relativ auf die Bezugsgröße (Protein, Fett, Gesamtballaststoffe)
+berechnet worden.
+Für bestimmte Nährstoffgruppen existieren charakteristische Verteilungsmuster. Wenn
+beispielsweise der Gesamtproteingehalt bekannt ist, aber die einzelnen Aminosäuren nicht
+analysiert wurden, kann das Aminosäureprofil von einem ähnlichen Lebensmittel berechnet
+werden.
+
+4.2.4 Literatur
+Definition: Der Datenpunkt stammt aus der wissenschaftlichen Literatur.
+Hierbei handelt es sich um Werte aus peer-reviewten Publikationen und Monografien, die
+den Qualitätskriterien des BLS entsprechen. Die konkrete Quelle ist in der Referenzspalte
+angegeben.
+
+
+
+
+                                       Seite 15 von 24
+                                                                          BLS 4.0 Dokumentation
+
+
+
+4.2.5 Aggregation
+Definition: Der Datenpunkt ist aus mehreren Datenpunkten der wissenschaftlichen Literatur
+aggregiert bzw. gemittelt worden.
+Wenn mehrere Literaturquellen Werte für denselben Nährstoff eines Lebensmittels liefern,
+werden nach festgelegten Qualitätskriterien Werte ausgewählt und/oder aggregiert. Der
+aggregierte Wert repräsentiert die beste verfügbare Datenqualität.
+
+4.2.6 Labelangabe
+Definition: Der Datenpunkt basiert auf Angaben auf den Verpackungen entsprechender
+Produkte.
+Bei industriell hergestellten Produkten können Nährwertangaben von der
+Produktverpackung übernommen werden. Diese Angaben unterliegen der EU-
+Lebensmittelinformationsverordnung.
+
+4.2.7 Nährstoffdatenbank
+Definition: Der Datenpunkt stammt aus anderen Nährstoffdatenbanken.
+Hierbei wurden Werte aus internationalen Nährstoffdatenbanken des EuroFIR-Netzwerks
+oder USDA FoodData Central übernommen.
+
+4.2.8 Übernommener Wert
+Definition: Der Datenpunkt ist von einem ähnlichen Lebensmitteleintrag übernommen
+worden.
+Bei fehlenden Daten kann der Wert eines verwandten Lebensmittels übernommen werden.
+So kann beispielsweise der Proteingehalt der Vollmilch auf die laktosefreie Vollmilch
+übertragen werden, wenn für diese keine Analysedaten vorliegen.
+
+4.2.9 Reskalierung
+Definition: Der Datenpunkt ist mit Bezug auf einen fixierten Nährstoffdatenpunkt reskaliert
+worden (z.B. Wassergehalt bei getrockneten Lebensmitteln).
+Bei Lebensmitteln mit unterschiedlichem Wassergehalt (z.B. frisch vs. getrocknet) werden
+die Nährstoffgehalte entsprechend umgerechnet. Die Reskalierung erfolgt auf Basis eines
+bekannten Referenzwertes.
+
+4.2.10 Logische Null
+Definition: Bei diesem Datenpunkt wird angenommen, dass der Nährstoff in diesem
+Lebensmittel logischerweise nicht vorkommt.
+Diese Kategorie wird verwendet, wenn das Fehlen eines Nährstoffs biologisch oder
+chemisch begründet ist. Beispiel: Retinol kommt ausschließlich in tierischen Lebensmitteln
+vor; bei pflanzlichen Lebensmitteln ist der Wert daher logisch Null. Der numerische Wert ist
+in diesen Fällen 0.
+
+4.2.11 Logische Annahme
+Definition: Bei diesem Datenpunkt wird der Gehalt des Nährstoffs basierend auf logischen,
+allgemeingültigen Regeln angenommen.
+In bestimmten Fällen können Nährstoffgehalte aufgrund allgemeiner wissenschaftlicher
+Erkenntnisse abgeleitet werden, ohne dass spezifische Messwerte vorliegen. Dies gilt
+beispielsweise für einen Fettgehalt von 100 g/100 g in einem Speiseöl.
+
+
+
+
+                                        Seite 16 von 24
+                                                                          BLS 4.0 Dokumentation
+
+
+
+4.2.12 Spuren
+Definition: Dieser Nährstoff ist nur in Spuren in diesem Lebensmittel vorhanden.
+Der Nährstoff ist in diesem Lebensmittel nur in Spuren vorhanden; ein gemessener Wert
+liegt nicht vor, da solch geringe Konzentrationen methodisch schwer zu erfassen sind.
+
+4.2.13 Formelberechnung
+Definition: Dieser Datenpunkt ist durch Formelberechnung berechnet worden.
+Summenparameter und Äquivalente werden aus ihren Einzelkomponenten berechnet. Die
+verwendeten Formeln sind in Kapitel 5 dokumentiert. Beispiele sind der Energiegehalt das
+Niacin-Äquivalent oder die Summe der unentbehrlichen Aminosäuren.
+
+4.3. Fehlender Wert
+Definition: Für diesen Datenpunkt liegt kein Wert vor.
+Das Datenfeld enthält keinen numerischen Wert. Dies bedeutet, dass keine zuverlässigen
+Daten verfügbar sind. Ein fehlender Wert ist nicht gleichbedeutend mit Null und sollte nicht
+als Null interpretiert werden.
+
+4.4 Interpretation von Datenwerten
+ Anzeige                         Datenherkunft                  Bedeutung
+ Numerischer Wert                Analyse, Literatur etc.        Gemessener oder
+                                                                abgeleiteter Nährstoffgehalt
+                                                                pro 100 g
+ TR                              Spuren                         Der Nährstoff wurde
+                                                                nachgewiesen, eine exakte
+                                                                Menge ist jedoch nicht
+                                                                bekannt (z. B. wegen
+                                                                fehlender Angaben zur
+                                                                Bestimmungs- bzw.
+                                                                Nachweisgrenze)
+ -                               Fehlender Wert                 Keine Daten verfügbar;
+                                                                nicht als Null interpretieren
+ <LOQ oder <LOD                  (verschiedene)                 Wert unterhalb der
+                                                                Bestimmungs- bzw.
+                                                                Nachweisgrenze
+
+
+Wichtige Hinweise zur Dateninterpretation
+     •   Fehlender Wert ≠ Null: Ein fehlender Wert bedeutet nicht, dass der Nährstoff nicht
+         vorhanden ist. Er bedeutet lediglich, dass keine zuverlässigen Daten vorliegen. Bei
+         Berechnungen (z.B. Nährstoffzufuhr einer spezifischen Diät) sollten diese fehlenden
+         Werte gesondert behandelt werden…
+     •   Spuren sind Schätzungen: Bei Spurenangaben ist der Gehalt niedrig, der
+         tatsächliche Wert jedoch unbekannt, aber größer als Null. Für Berechnungen können
+         diese Werte je nach Anwendungsfall als konservative Schätzung einbezogen
+         werden.
+     •   Referenzen: Die Referenzspalte gibt Auskunft über die konkrete Quelle eines
+         Datenpunktes und ermöglicht bei Bedarf eine tiefergehende Qualitätsbewertung.
+
+
+                                          Seite 17 von 24
+                                                                        BLS 4.0 Dokumentation
+
+
+
+5. Berechnungsformeln
+5.1 Übersicht
+Im BLS sind verschiedene Nährstoffgehalte als Summenparameter definiert und werden
+mittels festgelegter Summenformeln berechnet. Bei bestimmten Summenparametern – wie
+beispielsweise der Energieberechnung – erfolgt die Ermittlung des Gehalts grundsätzlich
+und unabhängig von der Datenquelle immer über die entsprechende Summenformel.
+Bei anderen Summenparametern ist eine Berechnung nur möglich, wenn für die jeweiligen
+einzelnen Nährstoffe vollständige Werte vorliegen (z. B. Vitamin K als Summe aus Vitamin
+K1 und Vitamin K2). Fehlen solche Einzelwerte, wird der Summenparameter nicht
+berechnet, sondern direkt aus der verfügbaren Datenquelle übernommen (z. B.
+Gesamtballaststoffe, wenn keine Angaben zu einzelnen Ballaststofffraktionen vorliegt). Eine
+vollständige Liste aller Formeln findet sich in der Referenzdatei
+BLS_4_0_Components_DE_EN.xlsx.
+
+5.2 Energieberechnung
+Die Energiewerte werden nach den Atwater-Faktoren und deren Erweiterungen berechnet:
+Energie (ENERCJ) in kJ:
+ENERCJ = PROT625 × 17 + FAT × 37 + (CHO – POLYL) × 17 + FIBT × 8 + ALC × 29 + OA
+× 13 + POLYL × 10
+
+Energie (ENERCC) in kcal:
+ENERCC = PROT625 × 4 + FAT × 9 + (CHO – POLYL) × 4 + FIBT × 2 + ALC × 7 + OA × 3
++ POLYL × 2,4
+
+5.3 Kohlenhydrate
+Monosaccharide, gesamt (MNSAC):
+MNSAC = GLUS + FRUS + GALS
+
+Disaccharide, gesamt (DISAC):
+DISAC = SUCS + MALS + LACS
+
+Zucker, gesamt (SUGAR):
+SUGAR = GLUS + FRUS + GALS + SUCS + MALS + LACS
+
+Kohlenhydrate, verfügbar (CHO):
+CHO = SUGAR + STARCH + OLSAC + POLYL
+
+5.4 Ballaststoffe
+Ballaststoffe, hochmolekular (FIBHMW) – alternative Berechnungen:
+FIBHMW = FIBHMWS + FIBHMWI
+oder
+FIBHMW = FIBINS + FIBSOL
+
+Ballaststoffe, gesamt (FIBT) – alternative Berechnungen:
+FIBT = FIBHMW + FIBLMW
+oder
+
+
+                                       Seite 18 von 24
+                                                                     BLS 4.0 Dokumentation
+
+
+
+FIBT = FIBINS + FIBSOL + FIBLMW
+
+5.5 Fettsäuren
+Gesättigte Fettsäuren (FASAT):
+FASAT = F4:0 + F6:0 + F8:0 + F10:0 + F12:0 + F14:0 + F15:0 + F16:0 + F17:0 + F18:0 +
+F20:0 + F22:0 + F24:0
+
+Einfach ungesättigte Fettsäuren (FAMS):
+FAMS = F14:1CN5 + F16:1CN7 + F18:1CN7 + F18:1CN9 + F20:1CN9 + F22:1CN9
+
+Omega-3-Fettsäuren (FAPUN3):
+FAPUN3 = F18:3CN3 + F18:4CN3 + F20:5CN3 + F22:5CN3 + F22:6CN3
+
+Omega-6-Fettsäuren (FAPUN6):
+FAPUN6 = F18:2CN6 + F18:3CN6 + F20:2CN6 + F20:3CN6 + F20:4CN6
+
+Mehrfach ungesättigte Fettsäuren (FAPU):
+FAPU = F18:2C9T11 + F18:2CN6 + F20:2CN6 + F18:3CN3 + F18:3CN6 + F20:3CN6 +
+F18:4CN3 + F20:4CN6 + F20:5CN3 + F22:5CN3 + F22:6CN3
+
+5.6 Aminosäuren
+Unentbehrliche Aminosäuren (AAE9):
+AAE9 = ILE + LEU + LYS + MET + PHE + THR + TRP + VAL + HIS
+
+5.7 Vitamine
+Vitamin A, Retinol-Äquivalent (VITA):
+VITA = RETOL + 1/6 × CARTB + 1/12 × CAROTPAXB
+
+Vitamin A, Retinol-Aktivitäts-Äquivalent (VITAA):
+VITAA = RETOL + 1/12 × CARTB + 1/24 × CAROTPAXB
+
+Vitamin D (VITD):
+VITD = ERGCAL + CHOCAL
+
+Vitamin E (VITE):
+VITE = TOCPHA
+
+Vitamin K (VITK):
+VITK = VITK1 + VITK2
+
+Folat-Äquivalent (FOL):
+FOL = FOLFD + 1,7 × FOLAC
+
+Niacin-Äquivalent (NIAEQ):
+NIAEQ = NIA + TRP × 1000 / 60
+
+
+
+
+                                        Seite 19 von 24
+                                                          BLS 4.0 Dokumentation
+
+
+
+5.8 Weitere Berechnungen
+Salz (NACL):
+NACL = NA × 2,5
+
+Protein (PROT625) – wenn nur Gesamtstickstoff vorliegt:
+PROT625 = NT × 6,25
+
+Zuckeralkohole, gesamt (POLYL):
+POLYL = MANTL + SORTL + XYLTL
+
+Organische Säuren, gesamt (OA):
+OA = MALAC + ACEAC + LACAC + TARAC + CITAC
+
+
+
+
+                                   Seite 20 von 24
+                                                                     BLS 4.0 Dokumentation
+
+
+
+6. Referenzdatei: Komponenten und Formeln
+6.1 Aufbau der Referenzdatei
+Die Datei BLS_4_0_Components_DE_EN.xlsx enthält die vollständige Liste aller 138
+Nährstoffe mit folgenden Informationen:
+ Spalte                       Bezeichnung                  Inhalt
+ A                            Index                        Sortierschlüssel
+                                                           Internationaler
+                              Nährstoffcode / Component
+ B                                                         Nährstoffcode (z. B.
+                              code
+                                                           ENERCJ, PROT625)
+                                                           Deutschsprachiger Name
+ C                            Nährstoffbezeichnung
+                                                           des Nährstoffs
+                                                           Englischsprachiger Name
+ D                            Component name
+                                                           des Nährstoffs
+                                                           Maßeinheit (g, mg, µg, kJ,
+ E                            Einheit / Unit
+                                                           kcal)
+                                                           Deutschsprachige
+ F                            Nährstoffgruppe
+                                                           Gruppenbezeichnung
+                                                           Englischsprachige
+ G                            Component group
+                                                           Gruppenbezeichnung
+                                                           Berechnungsformel (falls
+ H                            Formeln / Formula
+                                                           vorhanden)
+                              Formelanwendung / Formula    immer berechnet oder
+ I
+                              application                  teilweise berechnet
+
+
+6.2 Formelgruppen
+Die Spalte Formelgruppe unterscheidet zwei Kategorien:
+     •   immer berechnet: Der Wert wird stets aus den Einzelkomponenten berechnet, auch
+         wenn direkte Messwerte vorliegen könnten. Dies gilt für Summenparameter wie
+         Energie, Gesamtzucker oder Gesamtfettsäuren.
+     •   teilweise berechnet: Werte, die nur dann rechnerisch aus ihren einzelnen
+         Nährstoffen gebildet werden, wenn dort Daten vorliegen. Andernfalls kann der
+         Summenparameter direkt aus der Originalquelle übernommen werden.
+
+
+
+
+                                       Seite 21 von 24
+                                                                          BLS 4.0 Dokumentation
+
+
+
+7. Technische Spezifikationen
+7.1 Dateiformat
+ Eigenschaft                                     Spezifikation
+ Dateiformat                                     Microsoft Excel Open XML (.xlsx)
+ Zeichenkodierung                                UTF-8
+ Dezimaltrennzeichen                             Komma (,)
+ Sprachversionen                                 Deutsch und Englisch
+
+
+7.2 Bezugsgröße
+Alle Nährstoffangaben beziehen sich auf 100 g essbaren Anteil des Lebensmittels. Bei
+Lebensmitteln mit nicht essbaren Teilen (z. B. Schalen, Kerne) ist der nicht essbare Anteil
+bereits herausgerechnet.
+
+
+
+
+                                        Seite 22 von 24
+                                                       BLS 4.0 Dokumentation
+
+
+
+8. Glossar
+Begriff                      Erläuterung
+                             Standardisierte Umrechnungsfaktoren zur
+Atwater-Faktoren             Berechnung des Energiegehalts aus
+                             Makronährstoffen
+                             Bundeslebensmittelschlüssel – nationale
+BLS
+                             Nährstoffdatenbank Deutschlands
+                             Eindeutiger alphanumerischer
+BLS Code                     Identifikationscode für jedes Lebensmittel
+                             im BLS
+                             Docosahexaensäure – mehrfach
+DHA                          ungesättigte Omega-3-Fettsäure (C22:6 n-
+                             3)
+                             Eicosapentaensäure – mehrfach
+EPA                          ungesättigte Omega-3-Fettsäure (C20:5 n-
+                             3)
+                             Europäisches Netzwerk für
+EuroFIR                      Nährstoffdatenbanken (European Food
+                             Information Resource)
+                             Limit of Detection – Nachweisgrenze einer
+LOD
+                             Analysemethode
+                             Limit of Quantification –
+LOQ
+                             Bestimmungsgrenze einer Analysemethode
+                             Fehlender Wert – keine Daten für diesen
+- (Fehlender Wert)
+                             Datenpunkt verfügbar
+                             Max Rubner-Institut –
+MRI                          Bundesforschungsinstitut für Ernährung und
+                             Lebensmittel
+                             Berechnung von Nährstoffprofilen (z. B.
+Musterberechnung             Aminosäuren) anhand typischer
+                             Verteilungsmuster
+                             Retinol Activity Equivalent – Maßeinheit für
+RAE
+                             Vitamin-A-Aktivität
+                             Retinol Equivalent – ältere Maßeinheit für
+RE
+                             Vitamin-A-Aktivität
+                             Umrechnung von Nährstoffgehalten auf
+Reskalierung                 Basis eines fixierten Referenzwertes (z. B.
+                             Wassergehalt)
+                             Berechnung der Nährstoffe eines Gerichts
+                             aus den Einzelzutaten unter
+Rezeptberechnung
+                             Berücksichtigung von Gewichts- und
+                             Nährstoffänderungen
+
+
+
+
+                     Seite 23 von 24
+                                                                        BLS 4.0 Dokumentation
+
+
+
+9. Kontakt und Weiterführende Informationen
+9.1 Herausgeber
+Max Rubner-Institut
+Bundesforschungsinstitut für Ernährung und Lebensmittel
+Haid-und-Neu-Straße 9
+76131 Karlsruhe
+Deutschland
+E-Mail: bls.karlsruhe@mri.bund.de
+
+9.2 Zitierweise
+Bei Verwendung des BLS in wissenschaftlichen Publikationen wird folgende Zitierweise
+empfohlen:
+
+Max Rubner-Institut (2025): Bundeslebensmittelschlüssel (BLS), Version 4.0. Karlsruhe.
+
+9.3 Nutzungsbedingungen
+Der BLS 4.0 wird kostenfrei und ohne Lizenzbarrieren bereitgestellt. Die Daten können frei
+genutzt werden, unter anderem für:
+   •   Wissenschaftliche Forschung und Lehre
+   •   Ernährungsberatung und -planung
+   •   App- und Softwareentwicklung
+   •   Lebensmittelindustrie und Nährwertkennzeichnung
+
+Gemäß guter wissenschaftlicher Praxis sollte bei Veröffentlichungen die Quelle angegeben
+werden.
+
+                              — Ende der Dokumentation —
+
+
+
+
+                                       Seite 24 von 24
+
